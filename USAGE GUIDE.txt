@@ -1,0 +1,24 @@
+
+WordCounter.exe Guide
+Program by Sam Lampe
+
+Setup:
+Make sure the ‘WordCounter’ folder is in the ‘C:\’ file directory, or else the program will not work properly.
+
+To find this, open your file explorer (will usually look like a yellow folder) and type in the bar at the top; highlight and delete everything, and replace it with ‘C:\’ (don’t include the quotes), then press enter, and the main folder should open. Either drag the folder ‘WordCounter’ here or copy-paste it. Make sure not to drag it into another folder already in the C:\ folder.
+
+How to run:
+Navigate to the WordCounter folder in the C:\ directory. Double click on WordCounter.exe. A window may quickly pop up and close, this is normal. Another window should pop up later with the actual program.
+
+Prompts in the program will tell you what to type. Press enter to confirm your responses.
+The first question will need to be the exact name of the file.
+The second question will be how long of words/phrases you wish to search for.
+The last question will be how many of the most common words/phrases will show up (I would recommend 100 or so, but you can do as many as you’d like).
+
+The computer may need a few seconds to load all the results, and will show them in a vertical table, which you should be able to scroll through. The more results requested and the longer the phrases desired the longer it will take.
+
+Document format:
+All documents you wish to search should be in modern Microsoft Word documents (.docx) format. Current versions of Word will have it in this format automatically. If they are in other formats you will need to copy-paste them into a .docx document or convert it into one. If you want to make sure Word saves it as .docx, you can go into the word document, click ‘File’, then ‘Save As’, then click underneath the file name where it has the file type, and make sure it says ‘Microsoft Word (*.docx)’.
+
+Test files:
+The full texts of Shakespeare’s Hamlet and Romeo and Juliet are included to use as test files to ensure the program is working properly. The resources are public domain and can be found at http://shakespeare.mit.edu/Tragedy/hamlet/full.html and http://shakespeare.mit.edu/romeo_juliet/full.html, respectively.
