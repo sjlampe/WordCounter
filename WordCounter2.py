@@ -1,5 +1,5 @@
 #! python 3
-# WordCounter2.py -- A program that allows the user to enter a file name
+# WordCounter3.py -- A program that allows the user to enter a file name
 # and count the frequency of the most common words or phrases of a defined
 # length.
 
@@ -24,7 +24,7 @@ def getTextList(filename, phraseSize):
     textString = '\n'.join(fullText)
     textList = textString.split()
 
-    punctuations = '''!()[]{};:'"\,<>./?@#$%^&*_~'''
+    punctuations = '''!()[]{};:'"\,<>./?@#$%^&*_~–-'''
     for i in range(len(textList)):
         textList[i] = textList[i].lower()
     for i in range(len(textList)):
@@ -69,10 +69,49 @@ def mostCommonWords(textlist,numWords):
                 topCounts.insert(x,wordFreq[wordFreqKeys[i]])
                 break
 
-    # TODO: Get rid of unnecessary words like a, the, and, etc.
+    connectorWords = ['the','of','and','in','to','a','by','it','that','is','for',
+                      'as','was','which','this','its','their','be','on','at','has',
+                      'but','from','they','are','into','were','have','an','or',
+                      'we','all','any','but','our','not','with','i','me','he',
+                      'her','him','his','hers','an','their','these','so','if','at',
+                      'without','what','who','my','you','do','can','also','there',
+                      'when','out','them','theirs','they','form','only','every','then',
+                      'than','can','would','will','after','may','other','one','same',
+                      'us','must','more','no','such','some','upon','though',
+                      'although','nor','','had','been','up','most','way','thus',
+                      'since','could','become','she','your','go','am','too','those']
+    connectorPhrases2 = ['of the','in the','to the','by the','and the','for the',
+                         'on the','with the', 'of all', 'at the','to be','from the'
+                         ,'that the','of a','as a','it is','as the','of their',
+                         'is the','all the','it was', 'into the','and in','in a','the most',
+                         'of its','it has','and of',' the','  the','in its','of this',
+                         'its own','will be','under the','the more','was the','but the',
+                         'have been',] # may need to integrate this before the signle words are added, as the phrases are made
+    connectorPhrases3 = []
+    connectorPhrases4 = []
 
-    topWords = topWords[0:int(numWords)]
-    topCounts = topCounts[0:int(numWords)]
+    for i in range(len(connectorPhrases2)):
+        connectorWords.append(connectorPhrases2[i]+' ')
+
+                        # TODO: add two or three length sets, integrate into code
+                        # TODO: track length of phrases to use different sets
+
+    newTopWords = []
+    newTopCounts = []
+    matchFound = False
+    
+    for i in range(len(topWords)):
+        for j in range(len(connectorWords)):
+            if topWords[i] == connectorWords[j]:
+                matchFound = True
+                break
+        if not matchFound:
+            newTopWords.append(topWords[i])
+            newTopCounts.append(topCounts[i])
+        matchFound = False
+
+    topWords = newTopWords[0:int(numWords)]   #may introduce out of range bug for small values, double check this
+    topCounts = newTopCounts[0:int(numWords)]
     
     clipboardContents = ''
     for i in range(len(topWords)):
@@ -117,3 +156,4 @@ def main():
 
 while True: # Main program loop.
     main()
+
