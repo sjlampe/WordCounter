@@ -1,5 +1,5 @@
 #! python 3
-# WordCounter5.py -- A program that allows the user to enter a file name
+# WordCounter2.py -- A program that allows the user to enter a file name
 # and count the frequency of the most common words or phrases of a defined
 # length.
 
